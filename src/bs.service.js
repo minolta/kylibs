@@ -56,7 +56,8 @@ let BS = class BS {
     delete(id) {
         let du = this.urldelete + "/" + id;
         let h = this.us.getTokenheader();
-        return this.ht.post(du, { headers: h }).map((res) => res.json());
+        return this.ht.get(du, { headers: h }).map((res) => res.json());
+        //     return this.ht.post(du, { headers: h }).map((res: Response) => res.json());
     }
     g(url) {
         let h = this.us.getTokenheader();
