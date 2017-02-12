@@ -54,7 +54,9 @@ export class BS implements Serviceinterface {
     delete(id: number) {
         let du = this.urldelete + "/" + id;
         let h = this.us.getTokenheader();
-        return this.ht.post(du, { headers: h }).map((res: Response) => res.json());
+        return this.ht.get(du, { headers: h }).map((res: Response) => res.json());
+
+   //     return this.ht.post(du, { headers: h }).map((res: Response) => res.json());
     }
     g(url: string) {
         let h = this.us.getTokenheader();
